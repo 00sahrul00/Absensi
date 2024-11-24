@@ -7,7 +7,7 @@ export default function LoginScreen() {
     <View style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <Text style={styles.logo}>yukHADIR</Text>
+        <Text style={styles.logo}>HADIRyuk</Text>
         <Text style={styles.subLogo}>Absen Guru</Text>
       </View>
       

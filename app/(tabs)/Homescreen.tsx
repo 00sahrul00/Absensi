@@ -8,7 +8,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.logoText}>yukHADIR</Text>
+        <Text style={styles.logoText}>HADIRyuk</Text>
         <Text style={styles.subtitle}>Absensi-Guru</Text>
       </View>
 
@@ -21,15 +21,15 @@ export default function HomeScreen() {
         <Text style={styles.buttonText}>Absensi Masuk</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.button, styles.outButton]}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/AbsensiKeluar')}>
         <Text style={styles.buttonText}>Absensi Keluar</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('Istirahat')}>
         <Text style={styles.buttonText}>Mulai Istirahat</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.button, styles.breakEndButton]}>
+      <TouchableOpacity style={[styles.button, styles.breakEndButton]} onPress={() => router.push('/Selesai')}>
         <Text style={styles.buttonText}>Selesai Istirahat</Text>
       </TouchableOpacity>
     </View>
