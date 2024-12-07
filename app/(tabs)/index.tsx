@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 export default function LoginScreen() {
+
   const router = useRouter();
   return (
     <View style={styles.container}>
@@ -14,7 +15,6 @@ export default function LoginScreen() {
       {/* Login Form Section */}
       <View style={styles.form}>
         <Text style={styles.instruction}>Silahkan login menggunakan akun Guru</Text>
-
         {/* Email Input */}
         <TextInput 
           style={styles.input} 
