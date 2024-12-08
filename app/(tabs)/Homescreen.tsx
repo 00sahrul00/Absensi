@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 export default function HomeScreen() {
   const router = useRouter();	
@@ -21,10 +20,6 @@ export default function HomeScreen() {
         <Text style={styles.buttonText}>Absensi Masuk</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/AbsensiKeluar')}>
-        <Text style={styles.buttonText}>Absensi Keluar</Text>
-      </TouchableOpacity>
-
       <TouchableOpacity style={styles.button} onPress={() => router.push('Istirahat')}>
         <Text style={styles.buttonText}>Mulai Istirahat</Text>
       </TouchableOpacity>
@@ -35,6 +30,7 @@ export default function HomeScreen() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {

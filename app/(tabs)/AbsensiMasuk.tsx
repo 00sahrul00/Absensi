@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, ScrollView } from 'react-native';
 
 const AbsensiMasuk = () => {
   const [nama, setNama] = useState('');
@@ -29,9 +29,10 @@ const AbsensiMasuk = () => {
   };
 
   return (
+    <ScrollView style={styles.container}>
     <View style={styles.container}>
       <Text style={styles.title}>Absensi Masuk</Text>
-
+      </View>
       <Text style={styles.label}>Nama:</Text>
       <TextInput
         style={styles.input}
@@ -58,8 +59,20 @@ const AbsensiMasuk = () => {
       />
 
       <Button title="Submit" onPress={handleSubmit} />
-      
-    </View>
+     {/* Tampilan Data yang Sudah Disubmit */}
+     <Text style={styles.subtitle}>Data yang Sudah Di-submit:</Text>
+      {submittedData.length === 0 ? (
+        <Text style={styles.emptyText}>Belum ada data.</Text>
+      ) : (
+        submittedData.map((item, index) => (
+          <View key={index} style={styles.dataContainer}>
+            <Text style={styles.dataText}>Nama: {item.nama}</Text>
+            <Text style={styles.dataText}>Guru Mapel: {item.guruMapel}</Text>
+            <Text style={styles.dataText}>NIM: {item.nim}</Text>
+          </View>
+        ))
+      )}
+    </ScrollView>
   );
 };
 
